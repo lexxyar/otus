@@ -1,0 +1,390 @@
+openapi: 3.1.0
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'https://newsubway.shop/api/v1'
+tags:
+  - name: Product
+    description: Product actions
+  - name: Shop
+    description: Shop actions
+  - name: Cart
+    description: Cart actions
+  - name: Order
+    description: Order actions
+  - name: Delivery
+    description: Delivery actions
+  - name: Payment
+    description: Payment actions
+  - name: Auth
+    description: Auth actions
+  - name: Customer
+    description: Customer actions
+paths:
+  # Auth
+  /login:
+    post:
+      tags:
+        - Auth
+      summary: Авторизация
+      operationId: login
+  /logout:
+    post:
+      tags:
+        - Auth
+      summary: Выход из системы
+      operationId: logout
+  /register:
+    post:
+      tags:
+        - Auth
+      summary: Регистрация нового пользователя
+      operationId: register
+
+
+  # User
+  /profile:
+    get:
+      tags:
+        - Customer
+      summary: Информация о текущем пользователе
+      operationId: getCurrentUserProfile
+    put:
+      tags:
+        - Customer
+      summary: Обновление информации о текущем пользователе
+      operationId: updateCurrentUserProfile
+    delete:
+      tags:
+        - Customer
+      summary: Удаление аккаунта
+      operationId: deleteCurrentUserProfile
+  /profile/orders:
+    get:
+      tags:
+        - Customer
+        - Order
+      summary: Список заказов текущего пользователя
+      operationId: getCurrentUserOrders
+  /profile/orders/{orderId}:
+    get:
+      tags:
+        - Customer
+        - Order
+      summary: Детализация одного заказа текущего пользователя
+      operationId: getCurrentUserOrderById
+
+  #  Products
+  /products:
+    get:
+      tags:
+        - Product
+      summary: Возвращает меню
+      operationId: getProducts
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      tags:
+        - Product
+      summary: Создает новый продукт
+      operationId: createProduct
+  /products/{productId}:
+    get:
+      tags:
+        - Product
+      summary: Возвращает продукт по идентификатору
+      operationId: getProductById
+      parameters:
+        - name: productId
+          in: path
+          description: ID продукта
+          required: true
+          schema:
+            type: string
+            example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Not found
+          content:
+            plane/text:
+              example: Not found
+    put:
+      tags:
+        - Product
+      summary: Обновляет данные о продукте
+      operationId: updateProduct
+      parameters:
+        - name: productId
+          in: path
+          description: ID продукта
+          required: true
+          schema:
+            type: string
+            example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+    delete:
+      tags:
+        - Product
+      summary: Обновляет данные о продукте
+      operationId: updateProduct
+      parameters:
+        - name: productId
+          in: path
+          description: ID продукта
+          required: true
+          schema:
+            type: string
+            example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+
+  #  Shops
+  /shops:
+    get:
+      tags:
+        - Shop
+      summary: Список магазинов
+      operationId: getShopList
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Shop'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /shops/{shopId}:
+    get:
+      tags:
+        - Shop
+      summary: Выбирает магазин по идентификатору
+      operationId: getShopById
+  /shops/{shopId}/orders:
+    get:
+      tags:
+        - Shop
+        - Order
+      summary: Выбирает заказы магазина
+      operationId: getOrdersOfShop
+  /shops/{shopId}/promo:
+    get:
+      tags:
+        - Shop
+      summary: Выбирает локальные спец предложения магазина
+      operationId: getPromoOfShop
+    post:
+      tags:
+        - Shop
+      summary: Создает локальные спец предложение магазина
+      operationId: createPromoOfShop
+    delete:
+      tags:
+        - Shop
+      summary: Удаляет локальные спец предложение магазина
+      operationId: deletePromoOfShop
+  /shops/promo:
+    get:
+      tags:
+        - Shop
+      summary: Выбирает региональные спец предложения магазина
+      operationId: getPromo
+    post:
+      tags:
+        - Shop
+      summary: Создает региональные спец предложение магазина
+      operationId: createPromo
+    delete:
+      tags:
+        - Shop
+      summary: Удаляет региональные спец предложение магазина
+      operationId: deletePromo
+  /shops/report:
+    get:
+      tags:
+        - Shop
+        - Report
+      summary: Возвращает отчет
+      operationId: getReport
+
+  #  Cart
+  /cart:
+    post:
+      tags:
+        - Cart
+      summary: Добавить в корзину
+      operationId: addToCart
+  /cart/{productId}:
+    put:
+      tags:
+        - Cart
+      summary: Изменить количество одного продукта
+      operationId: updateCartQuantity
+    delete:
+      tags:
+        - Cart
+      summary: Удалить продукт из корзины
+      operationId: deleteFromCart
+
+  #  Order
+  /order:
+    post:
+      tags:
+        - Order
+      summary: Создать заказ
+      operationId: createOrder
+  /order/{orderId}:
+    get:
+      tags:
+        - Order
+      summary: Выбрать заказ по идентификатору
+      operationId: getOrderById
+    put:
+      tags:
+        - Order
+      summary: Обновить статус заказа
+      operationId: updateOrderStatus
+  /order/findByStatus:
+    get:
+      tags:
+        - Order
+      summary: Выбрать заказы по статусу
+      operationId: getOrderByStatus
+  /order/findByShop:
+    get:
+      tags:
+        - Order
+        - Shop
+      summary: Выбрать заказы по магазину
+      operationId: getOrderByShop
+
+  #  Delivery
+  /delivery/types:
+    get:
+      tags:
+        - Delivery
+      summary: Возвращает список видов доставки
+      operationId: getDeliveryTypeList
+  /delivery/orders/forDelivery:
+    get:
+      tags:
+        - Delivery
+        - Order
+      summary: Выбирает все заказы готовые к доставке
+      operationId: getOrdersForDelivery
+  /delivery/orders/{orderId}:
+    put:
+      tags:
+        - Delivery
+        - Order
+      summary: Обновляет статус заказа доставки
+      operationId: updateDeliveryOrders
+
+  #  Payment
+  /payment/types:
+    get:
+      tags:
+        - Payment
+      summary: Возвращает список видов оплаты
+      operationId: getPaymentTypeList
+  /payment/{orderId}:
+    post:
+      tags:
+        - Payment
+      summary: Создает платеж для заказа
+      operationId: createPaymentForOrder
+  /payment/ipn:
+    post:
+      tags:
+        - Payment
+      summary: Принимает уведомление от платежной системы
+      operationId: receivePaymentNotification
+
+
+components:
+  schemas:
+    OrderItem:
+      type: object
+      properties:
+        id:
+          type: string
+          example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+        quantity:
+          type: number
+          example: 199.99
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+          example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+        shop_id:
+          type: string
+          example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+        items:
+          type: array
+          $ref: "#/components/schemas/OrderItem"
+
+    Shop:
+      required:
+        - name
+        - address
+      type: object
+      properties:
+        id:
+          type: string
+          example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+        address:
+          type: string
+          example: Moscow City
+    Product:
+      required:
+        - name
+        - price
+      type: object
+      properties:
+        id:
+          type: string
+          example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+        name:
+          type: string
+          example: Cheese & Tuna
+        price:
+          type: number
+          example: 149.99
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+      required:
+        - code
+        - message
+
+  

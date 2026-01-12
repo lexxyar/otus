@@ -1,0 +1,21 @@
+classDiagram
+    Customer --* Order
+    PaymentInfo <|-- Customer
+    Order --|> PaymentInfo
+    DeliveryInfo <|-- Order
+    HeadQuart --* Shop
+    Shop --* Order
+    OrderItems *-- Order
+    MenuItem *-- OrderItems
+    Shop --* MenuItem
+    HeadQuart --* Order
+
+    Order: state
+    DeliveryInfo: deliveryTyme
+    DeliveryInfo: destination
+    Shop: geoLocation
+    Shop: shopId
+    PaymentInfo: paymentId
+    OrderItems: quantities
+    MenuItem: name
+    MenuItem: price

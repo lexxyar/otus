@@ -1,0 +1,115 @@
+openapi: 3.1.0
+info:
+  title: Сервис платежей
+  description: Сервис управления оплатой
+  version: 1.0.0
+servers:
+  - url: 'https://newsubway.shop/api/v1'
+tags:
+  - name: Payment
+paths:
+  #  Payment
+  /payment/invoice:
+    get:
+      tags:
+        - Payment
+      summary: Список счетов
+      operationId: getInvoiceList
+      security:
+        - bearerAuth: [ ]
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Invoice'
+        401:
+          $ref: "#/components/responses/Unauthorized"
+    post:
+      tags:
+        - Payment
+      summary: Создание счета на оплату
+      operationId: createInvoice
+      security:
+        - bearerAuth: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DataForInvoice"
+      responses:
+        200:
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Invoice"
+        401:
+          $ref: "#/components/responses/Unauthorized"
+  /payment/ipn:
+    post:
+      tags:
+        - Payment
+      summary: Принимает уведомления от внешней платежной системы
+      operationId: receiveIpn
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IPN'
+      responses:
+        200:
+          description: success
+        400:
+          description: Любая ошибка несоответствия платежа
+
+components:
+  securitySchemes:
+    bearerAuth:
+      $ref: "../schemas/security.yaml#/bearerAuth"
+  responses:
+    Unauthorized:
+      $ref: "../schemas/common.yaml#/Unauthorized"
+  schemas:
+    DataForInvoice:
+      type: object
+      properties:
+        order_id:
+          $ref: "../schemas/common.yaml#/Id"
+        amount:
+          type: number
+          example: 519.98
+        currency:
+          type: string
+          example: 'RUB'
+    Invoice:
+      type: object
+      properties:
+        id:
+          $ref: "../schemas/common.yaml#/Id"
+        order_id:
+          $ref: "../schemas/common.yaml#/Id"
+        payment_link:
+          $ref: "../schemas/common.yaml#/PaymentLink"
+        payment_response:
+          type: string
+          example: 'JSON string or empty'
+    IPN:
+      type: object
+      properties:
+        order_id:
+          $ref: "../schemas/common.yaml#/Id"
+        amount:
+          type: object
+          properties:
+            currency:
+              type: string
+              example: 'RUB'
+            value:
+              type: number
+              example: 519.98
+        status:
+          $ref: "../schemas/order.yaml#/OrderStatus"

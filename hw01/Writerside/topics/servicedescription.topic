@@ -1,0 +1,329 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/html-entities.dtd">
+<topic xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" is-library="true" id="servicedescription"
+       title="ServiceDescription">
+
+    <snippet id="auth-service-description">
+
+        <table>
+            <tr>
+                <td colspan="2">Service name:
+                    <control>Auth service</control>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <control>Service dependencies</control>
+                </td>
+                <td>
+                    <control>Queries and Commands</control>
+
+                    <list>
+                        <li>Авторизация</li>
+                        <li>Выход из системы</li>
+                        <li>Регистрация</li>
+                        <li>Обновление данных пользователя</li>
+                        <li>Удаление аккаунта</li>
+                    </list>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <control>Event Subscriptions</control>
+                </td>
+                <td>
+                    <control>Events Published</control>
+                    <list>
+                        <li>Зарегистрирован новый пользователь</li>
+                        <li>Аккаунт удален</li>
+                    </list>
+                </td>
+            </tr>
+        </table>
+
+    </snippet>
+
+    <snippet id="order-service-description">
+
+        <table>
+            <tr>
+                <td colspan="2">Service name:
+                    <control>Order service</control>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <control>Service dependencies</control>
+                </td>
+                <td>
+                    <control>Queries and Commands</control>
+
+                    <list>
+                        <li>Добавление продуктов в корзину</li>
+                        <li>Изменение количества товара в корзине</li>
+                        <li>Удаление товара из корзины</li>
+                    </list>
+                    <list>
+                        <li>Создание заказа</li>
+                        <li>Обновление заказа</li>
+                        <li>Выбор одного заказа по идентификатору</li>
+                        <li>Выбор заказов по статусу</li>
+                        <li>Выбор заказов магазина</li>
+                        <li>Выбор заказов для доставки</li>
+                        <li>Выбор текущего заказа пользователя</li>
+                        <li>Выбор списка заказов пользователя</li>
+                        <li>Выбор всех заказов всех магазинов</li>
+                    </list>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <control>Event Subscriptions</control>
+                    <list>
+
+                    </list>
+                    <list>
+                        <li>Оплата отменена</li>
+                        <li>Ошибка оплаты</li>
+                    </list>
+                </td>
+                <td>
+                    <control>Events Published</control>
+                    <list>
+                        <li>Оформлен новый заказ</li>
+                        <li>Ожидание оплаты</li>
+                        <li>Заказ готов к доставке</li>
+                        <li>Заказ отменен</li>
+                        <li>Заказ оплачен</li>
+                        <li>Заказ передан в доставку</li>
+                        <li>Заказ доставлен</li>
+                    </list>
+
+                </td>
+            </tr>
+        </table>
+
+    </snippet>
+
+    <snippet id="shop-service-description">
+
+        <table>
+            <tr>
+                <td colspan="2">Service name:
+                    <control>Shop service</control>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <control>Service dependencies</control>
+                </td>
+                <td>
+                    <control>Queries and Commands</control>
+
+                    <list>
+                        <li>Создание магазина</li>
+                        <li>Обновление магазина</li>
+                        <li>Выбор одного магазина по идентификатору</li>
+                        <li>Удаление магазина</li>
+                        <li>Установка региональных/локальных акций</li>
+                        <li>Удаление региональных/локальных акций</li>
+                    </list>
+                    <list>
+                        <li>Список продуктов</li>
+                        <li>Продукт по идентификатору</li>
+                        <li>Создание продукта</li>
+                        <li>Обновление продукта</li>
+                        <li>Удаление продукта</li>
+                    </list>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <control>Event Subscriptions</control>
+                </td>
+                <td>
+                    <control>Events Published</control>
+                    <list>
+                        <li>Новая региональная/локальная акция</li>
+                    </list>
+                </td>
+            </tr>
+        </table>
+
+    </snippet>
+
+    <snippet id="delivery-service-description">
+
+        <table>
+            <tr>
+                <td colspan="2">Service name:
+                    <control>Delivery service</control>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <control>Service dependencies</control>
+                </td>
+                <td>
+                    <control>Queries and Commands</control>
+
+                    <list>
+                        <li>Получит список курьеров</li>
+                        <li>Добавить курьера</li>
+                        <li>Изменить курьера</li>
+                        <li>Удалить курьера</li>
+                        <li>Выбрать свободных курьеров</li>
+                    </list>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <control>Event Subscriptions</control>
+                    <list>
+                        <li>Заказ готов к доставке</li>
+                    </list>
+                </td>
+                <td>
+                    <control>Events Published</control>
+                </td>
+            </tr>
+        </table>
+
+    </snippet>
+
+    <snippet id="payment-service-description">
+
+        <table>
+            <tr>
+                <td colspan="2">Service name:
+                    <control>Payment service</control>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <control>Service dependencies</control>
+                </td>
+                <td>
+                    <control>Queries and Commands</control>
+
+                    <list>
+                        <li>Список счетов</li>
+                        <li>Создать счет на оплату и отправка ссылки на оплату онлайн</li>
+                        <li>Прием нотификации от платежных сервисов</li>
+                    </list>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <control>Event Subscriptions</control>
+                    <list>
+                        <li>Ожидание оплаты</li>
+                    </list>
+                </td>
+                <td>
+                    <control>Events Published</control>
+                    <list>
+                        <li>Оплата отменена</li>
+                        <li>Ошибка оплаты</li>
+                    </list>
+                </td>
+            </tr>
+        </table>
+
+    </snippet>
+
+    <snippet id="notification-service-description">
+
+        <table>
+            <tr>
+                <td colspan="2">Service name:
+                    <control>Notification service</control>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <control>Service dependencies</control>
+                </td>
+                <td>
+                    <control>Queries and Commands</control>
+
+                    <list>
+                        <li>Отправка уведомлений (почта, смс)</li>
+                    </list>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <control>Event Subscriptions</control>
+                    <list>
+                        <li>Ожидание оплаты</li>
+                        <li>Заказ оплачен</li>
+                        <li>Оплата отменена</li>
+                        <li>Ошибка оплаты</li>
+                        <li>Оформлен новый заказ</li>
+                        <li>Заказ готов к выдаче</li>
+                        <li>Заказ ожидает доставку</li>
+                        <li>Заказ передан в доставку</li>
+                        <li>Заказ доставлен</li>
+                        <li>Заказ отменен</li>
+                        <li>Новая региональная/локальная акция</li>
+                        <li>Зарегистрирован новый пользователь</li>
+                        <li>Аккаунт удален</li>
+                    </list>
+                </td>
+                <td>
+                    <control>Events Published</control>
+                </td>
+            </tr>
+        </table>
+
+    </snippet>
+
+    <snippet id="report-service-description">
+
+        <table>
+            <tr>
+                <td colspan="2">Service name:
+                    <control>Report service</control>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <control>Service dependencies</control>
+                </td>
+                <td>
+                    <control>Queries and Commands</control>
+
+                    <list>
+                        <li>Создание отчетов</li>
+                    </list>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <control>Event Subscriptions</control>
+                </td>
+                <td>
+                    <control>Events Published</control>
+                </td>
+            </tr>
+        </table>
+
+    </snippet>
+
+</topic>

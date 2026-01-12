@@ -1,0 +1,45 @@
+OrderStatus:
+  type: string
+  description: Статус заказа
+  example: paid
+  enum:
+    - created
+    - paid
+    - cooked
+    - delivered
+    - refund
+    - done
+OrderState:
+  type: object
+  properties:
+    id:
+      $ref: "../schemas/common.yaml#/Id"
+    status:
+      $ref: "#/OrderStatus"
+    total:
+      type: number
+      example: 219.98
+
+Order:
+  type: object
+  properties:
+    id:
+      $ref: "../schemas/common.yaml#/Id"
+    user_id:
+      $ref: "../schemas/common.yaml#/Id"
+    shop_id:
+      $ref: "../schemas/common.yaml#/Id"
+    created_at:
+      type: string
+      format: date-time
+      description: Дата создания
+    updated_at:
+      type: string
+      format: date-time
+      description: Дата изменения
+    status:
+      $ref: "#/OrderStatus"
+    items:
+      type: array
+      items:
+        $ref: "../schemas/product.yaml#/Product"

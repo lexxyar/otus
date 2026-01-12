@@ -1,0 +1,15 @@
+Profile:
+  type: object
+  properties:
+    name:
+      type: string
+      example: Jane Doe
+      description: The user name
+    email:
+      type: string
+      example: user@mail.com
+      description: The user email for login
+    address:
+      type: string
+      example: Elm st.
+      description: The user address for delivery

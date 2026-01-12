@@ -1,0 +1,342 @@
+openapi: 3.1.0
+info:
+  title: Сервис магазинов и продуктов
+  description: Сервис управления магазинами и продуктами
+  version: 1.0.0
+servers:
+  - url: 'https://newsubway.shop/api/v1'
+tags:
+  - name: Shop
+  - name: Product
+  - name: Promo
+paths:
+  #  Shops
+  /shops:
+    get:
+      tags:
+        - Shop
+      summary: Список магазинов
+      operationId: getShopList
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Shop'
+    post:
+      tags:
+        - Shop
+      summary: Создает магазин
+      operationId: createShop
+      security:
+        - bearerAuth: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Shop'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+  /shops/{shopId}:
+    get:
+      tags:
+        - Shop
+      summary: Выбирает магазин по идентификатору
+      operationId: getShopById
+      parameters:
+        - $ref: "#/components/parameters/ShopIdParam"
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+        404:
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags:
+        - Shop
+      summary: Обновляет данные магазина
+      operationId: updateShop
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - $ref: "#/components/parameters/ShopIdParam"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Shop'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags:
+        - Shop
+      summary: Удаляет магазин
+      operationId: deleteShop
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - $ref: "#/components/parameters/ShopIdParam"
+      responses:
+        204:
+          description: Deleted
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+  /shops/{shopId}/promo:
+    get:
+      tags:
+        - Shop
+      summary: Выбирает спец предложения магазина
+      operationId: getShopPromo
+      parameters:
+        - $ref: "#/components/parameters/ShopIdParam"
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Promo'
+        404:
+          $ref: '#/components/responses/NotFound'
+
+  #  Promos
+  /promos:
+    get:
+      tags:
+        - Promo
+      summary: Список акций
+      operationId: getPromoList
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Promo'
+    post:
+      tags:
+        - Promo
+      summary: Создает акцию
+      operationId: createPromo
+      security:
+        - bearerAuth: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Promo'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Promo'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+  /promos/{promoId}:
+    get:
+      tags:
+        - Promo
+      summary: Выбирает акцию по идентификатору
+      operationId: getPromoById
+      parameters:
+        - $ref: "#/components/parameters/PromoIdParam"
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Promo'
+        404:
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags:
+        - Promo
+      summary: Обновляет данные акции
+      operationId: updatePromo
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - $ref: "#/components/parameters/PromoIdParam"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Promo'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Promo'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags:
+        - Promo
+      summary: Удаляет акцию
+      operationId: deletePromo
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - $ref: "#/components/parameters/PromoIdParam"
+      responses:
+        204:
+          description: Deleted
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+
+  #  Products
+  /products:
+    get:
+      tags:
+        - Product
+      summary: Возвращает список товаров
+      operationId: getProducts
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+    post:
+      tags:
+        - Product
+      summary: Создает новый продукт
+      operationId: createProduct
+      security:
+        - bearerAuth: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+  /products/{productId}:
+    get:
+      tags:
+        - Product
+      summary: Возвращает продукт по идентификатору
+      operationId: getProductById
+      parameters:
+        - $ref: "#/components/parameters/ProductIdParam"
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        404:
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags:
+        - Product
+      summary: Обновляет данные о продукте
+      operationId: updateProduct
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - $ref: "#/components/parameters/ProductIdParam"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags:
+        - Product
+      summary: Удаляет продукт
+      operationId: deleteProduct
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - $ref: "#/components/parameters/ProductIdParam"
+      responses:
+        204:
+          description: Deleted
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      $ref: "../schemas/security.yaml#/bearerAuth"
+  responses:
+    Unauthorized:
+      $ref: "../schemas/common.yaml#/Unauthorized"
+    NotFound:
+      $ref: "../schemas/common.yaml#/NotFound"
+  parameters:
+    PromoIdParam:
+      $ref: "../schemas/common.yaml#/PromoIdParam"
+    ProductIdParam:
+      $ref: "../schemas/common.yaml#/ProductIdParam"
+    ShopIdParam:
+      $ref: "../schemas/common.yaml#/ShopIdParam"
+  schemas:
+    Shop:
+      $ref: "../schemas/shop.yaml#/Shop"
+    Product:
+      $ref: "../schemas/product.yaml#/Product"
+    Promo:
+      $ref: "../schemas/promo.yaml#/Promo"

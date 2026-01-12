@@ -1,0 +1,18 @@
+Shop:
+  required:
+    - name
+    - address
+  type: object
+  properties:
+    id:
+      type: string
+      example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+    address:
+      type: string
+      example: Moscow City
+    long:
+      type: number
+      example: 2.29450000
+    lat:
+      type: number
+      example: 48.85840000

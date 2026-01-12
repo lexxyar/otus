@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://resources.jetbrains.com/writerside/1.0/redirection-rules.dtd">
+<rules>
+    <!-- format is as follows
+    <rule id="<unique id>">
+        <accepts>page.html</accepts>
+    </rule>
+    -->
+    <rule id="3718c7da">
+        <description>Created after removal of "This is the first topic" from Help Instance</description>
+        <accepts>Default-topic.html</accepts>
+    </rule>
+    <rule id="755e324">
+        <description>Created after removal of "Library of snippets" from Writerside_libraries</description>
+        <accepts>lib.html</accepts>
+    </rule>
+    <rule id="186041de">
+        <description>Created after removal of "snippets" from sandwich-arch</description>
+        <accepts>snippets.html</accepts>
+    </rule>
+    <rule id="44daf680">
+        <description>Created after removal of "Schemas" from sandwich-arch</description>
+        <accepts>Schemas.html</accepts>
+    </rule>
+    <rule id="8cc96de">
+        <description>Created after removal of "Error" from sandwich-arch</description>
+        <accepts>Error.html</accepts>
+    </rule>
+    <rule id="41277da1">
+        <description>Created after removal of "Product" from sandwich-arch</description>
+        <accepts>Product.html</accepts>
+    </rule>
+    <rule id="3f757854">
+        <description>Created after removal of "Shop" from sandwich-arch</description>
+        <accepts>Shop.html</accepts>
+    </rule>
+    <rule id="b839e10">
+        <description>Created after removal of "Order" from sandwich-arch</description>
+        <accepts>Order.html</accepts>
+    </rule>
+    <rule id="76921fde">
+        <description>Created after removal of "OrderItem" from sandwich-arch</description>
+        <accepts>OrderItem.html</accepts>
+    </rule>
+    <rule id="6337f693">
+        <description>Created after removal of "Принимает уведомление от платежной системы" from sandwich-arch
+        </description>
+        <accepts>Принимает_уведомление_от_платежной_системы.html</accepts>
+    </rule>
+    <rule id="4c98ab41">
+        <description>Created after removal of "Создает платеж для заказа" from sandwich-arch</description>
+        <accepts>Создает_платеж_для_заказа.html</accepts>
+    </rule>
+    <rule id="231f96a4">
+        <description>Created after removal of "Возвращает список видов оплаты" from sandwich-arch</description>
+        <accepts>Возвращает_список_видов_оплаты.html</accepts>
+    </rule>
+    <rule id="260458cc">
+        <description>Created after removal of "Обновляет статус заказа доставки" from sandwich-arch</description>
+        <accepts>Обновляет_статус_заказа_доставки.html</accepts>
+    </rule>
+    <rule id="25a3fe81">
+        <description>Created after removal of "Выбирает все заказы готовые к доставке" from sandwich-arch</description>
+        <accepts>Выбирает_все_заказы_готовые_к_доставке.html</accepts>
+    </rule>
+    <rule id="5497201f">
+        <description>Created after removal of "Возвращает список видов доставки" from sandwich-arch</description>
+        <accepts>Возвращает_список_видов_доставки.html</accepts>
+    </rule>
+    <rule id="ee743c2">
+        <description>Created after removal of "Выбрать заказы по магазину" from sandwich-arch</description>
+        <accepts>Выбрать_заказы_по_магазину.html</accepts>
+    </rule>
+    <rule id="353c8f8e">
+        <description>Created after removal of "Выбрать заказы по статусу" from sandwich-arch</description>
+        <accepts>Выбрать_заказы_по_статусу.html</accepts>
+    </rule>
+    <rule id="551f1c49">
+        <description>Created after removal of "Обновить статус заказа" from sandwich-arch</description>
+        <accepts>Обновить_статус_заказа.html</accepts>
+    </rule>
+    <rule id="7b5e23f8">
+        <description>Created after removal of "Выбрать заказ по идентификатору" from sandwich-arch</description>
+        <accepts>Выбрать_заказ_по_идентификатору.html</accepts>
+    </rule>
+    <rule id="45a2da3">
+        <description>Created after removal of "Создать заказ" from sandwich-arch</description>
+        <accepts>Создать_заказ.html</accepts>
+    </rule>
+    <rule id="7b221672">
+        <description>Created after removal of "Удалить продукт из корзины" from sandwich-arch</description>
+        <accepts>Удалить_продукт_из_корзины.html</accepts>
+    </rule>
+    <rule id="451061ca">
+        <description>Created after removal of "Изменить количество одного продукта" from sandwich-arch</description>
+        <accepts>Изменить_количество_одного_продукта.html</accepts>
+    </rule>
+    <rule id="2203ce09">
+        <description>Created after removal of "Добавить в корзину" from sandwich-arch</description>
+        <accepts>Добавить_в_корзину.html</accepts>
+    </rule>
+    <rule id="14129e75">
+        <description>Created after removal of "Возвращает отчет" from sandwich-arch</description>
+        <accepts>Возвращает_отчет.html</accepts>
+    </rule>
+    <rule id="1a94c340">
+        <description>Created after removal of "Удаляет региональные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Удаляет_региональные_спец_предложение_магазина.html</accepts>
+    </rule>
+    <rule id="e3a3fa0">
+        <description>Created after removal of "Создает региональные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Создает_региональные_спец_предложение_магазина.html</accepts>
+    </rule>
+    <rule id="539d7f31">
+        <description>Created after removal of "Выбирает региональные спец предложения магазина" from sandwich-arch
+        </description>
+        <accepts>Выбирает_региональные_спец_предложения_магазина.html</accepts>
+    </rule>
+    <rule id="26a1cb23">
+        <description>Created after removal of "Удаляет локальные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Удаляет_локальные_спец_предложение_магазина.html</accepts>
+    </rule>
+    <rule id="7e098c8">
+        <description>Created after removal of "Создает локальные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Создает_локальные_спец_предложение_магазина.html</accepts>
+    </rule>
+    <rule id="49a4e733">
+        <description>Created after removal of "Выбирает локальные спец предложения магазина" from sandwich-arch
+        </description>
+        <accepts>Выбирает_локальные_спец_предложения_магазина.html</accepts>
+    </rule>
+    <rule id="21c66739">
+        <description>Created after removal of "Выбирает заказы магазина" from sandwich-arch</description>
+        <accepts>Выбирает_заказы_магазина.html</accepts>
+    </rule>
+    <rule id="59d6acef">
+        <description>Created after removal of "Выбирает магазин по идентификатору" from sandwich-arch</description>
+        <accepts>Выбирает_магазин_по_идентификатору.html</accepts>
+    </rule>
+    <rule id="798df534">
+        <description>Created after removal of "Список магазинов" from sandwich-arch</description>
+        <accepts>Список_магазинов.html</accepts>
+    </rule>
+    <rule id="4eee5308">
+        <description>Created after removal of "Обновляет данные о продукте" from sandwich-arch</description>
+        <accepts>Обновляет_данные_о_продукте2.html</accepts>
+    </rule>
+    <rule id="78d8b356">
+        <description>Created after removal of "Обновляет данные о продукте" from sandwich-arch</description>
+        <accepts>Обновляет_данные_о_продукте.html</accepts>
+    </rule>
+    <rule id="5b09c3f1">
+        <description>Created after removal of "Возвращает продукт по идентификатору" from sandwich-arch</description>
+        <accepts>Возвращает_продукт_по_идентификатору.html</accepts>
+    </rule>
+    <rule id="4a205bc2">
+        <description>Created after removal of "Создает новый продукт" from sandwich-arch</description>
+        <accepts>Создает_новый_продукт.html</accepts>
+    </rule>
+    <rule id="318a503e">
+        <description>Created after removal of "Возвращает меню" from sandwich-arch</description>
+        <accepts>Возвращает_меню.html</accepts>
+    </rule>
+    <rule id="3797cd79">
+        <description>Created after removal of "Детализация одного заказа текущего пользователя" from sandwich-arch
+        </description>
+        <accepts>Детализация_одного_заказа_текущего_пользователя.html</accepts>
+    </rule>
+    <rule id="60873d1a">
+        <description>Created after removal of "Список заказов текущего пользователя" from sandwich-arch</description>
+        <accepts>Список_заказов_текущего_пользователя.html</accepts>
+    </rule>
+    <rule id="1ef77a4">
+        <description>Created after removal of "Удаление аккаунта" from sandwich-arch</description>
+        <accepts>Удаление_аккаунта.html</accepts>
+    </rule>
+    <rule id="219353bd">
+        <description>Created after removal of "Обновление информации о текущем пользователе" from sandwich-arch
+        </description>
+        <accepts>Обновление_информации_о_текущем_пользователе.html</accepts>
+    </rule>
+    <rule id="4197e32b">
+        <description>Created after removal of "Информация о текущем пользователе" from sandwich-arch</description>
+        <accepts>Информация_о_текущем_пользователе.html</accepts>
+    </rule>
+    <rule id="2e6c34a9">
+        <description>Created after removal of "Регистрация нового пользователя" from sandwich-arch</description>
+        <accepts>Регистрация_нового_пользователя.html</accepts>
+    </rule>
+    <rule id="127319da">
+        <description>Created after removal of "Выход из системы" from sandwich-arch</description>
+        <accepts>Выход_из_системы.html</accepts>
+    </rule>
+    <rule id="61ed50e9">
+        <description>Created after removal of "Авторизация" from sandwich-arch</description>
+        <accepts>Авторизация.html</accepts>
+    </rule>
+    <rule id="34ce69e5">
+        <description>Created after removal of "API Reference" from sandwich-arch</description>
+        <accepts>API_Reference.html</accepts>
+    </rule>
+    <rule id="2cb4686">
+        <description>Created after removal of "Schemas" from sandwich-arch</description>
+        <accepts>Schemas2.html</accepts>
+    </rule>
+    <rule id="5c08ae66">
+        <description>Created after removal of "Error" from sandwich-arch</description>
+        <accepts>Error2.html</accepts>
+    </rule>
+    <rule id="1235850d">
+        <description>Created after removal of "Product" from sandwich-arch</description>
+        <accepts>Product2.html</accepts>
+    </rule>
+    <rule id="60252d2b">
+        <description>Created after removal of "Shop" from sandwich-arch</description>
+        <accepts>Shop2.html</accepts>
+    </rule>
+    <rule id="3be75e7a">
+        <description>Created after removal of "Order" from sandwich-arch</description>
+        <accepts>Order2.html</accepts>
+    </rule>
+    <rule id="49b4f2a2">
+        <description>Created after removal of "OrderItem" from sandwich-arch</description>
+        <accepts>OrderItem2.html</accepts>
+    </rule>
+    <rule id="471b99">
+        <description>Created after removal of "API Reference" from sandwich-arch</description>
+        <accepts>API_Reference2.html</accepts>
+    </rule>
+    <rule id="38b6cd6">
+        <description>Created after removal of "Schemas" from sandwich-arch</description>
+        <accepts>Schemas3.html</accepts>
+    </rule>
+    <rule id="133d7e06">
+        <description>Created after removal of "Error" from sandwich-arch</description>
+        <accepts>Error3.html</accepts>
+    </rule>
+    <rule id="4bee25f6">
+        <description>Created after removal of "Product" from sandwich-arch</description>
+        <accepts>Product3.html</accepts>
+    </rule>
+    <rule id="458fc79e">
+        <description>Created after removal of "Shop" from sandwich-arch</description>
+        <accepts>Shop3.html</accepts>
+    </rule>
+    <rule id="52b34bb8">
+        <description>Created after removal of "Order" from sandwich-arch</description>
+        <accepts>Order3.html</accepts>
+    </rule>
+    <rule id="723bf7b3">
+        <description>Created after removal of "OrderItem" from sandwich-arch</description>
+        <accepts>OrderItem3.html</accepts>
+    </rule>
+    <rule id="a305ad4">
+        <description>Created after removal of "Принимает уведомление от платежной системы" from sandwich-arch
+        </description>
+        <accepts>Принимает_уведомление_от_платежной_системы2.html</accepts>
+    </rule>
+    <rule id="5ffe2ee8">
+        <description>Created after removal of "Создает платеж для заказа" from sandwich-arch</description>
+        <accepts>Создает_платеж_для_заказа2.html</accepts>
+    </rule>
+    <rule id="5dc6b5b9">
+        <description>Created after removal of "Возвращает список видов оплаты" from sandwich-arch</description>
+        <accepts>Возвращает_список_видов_оплаты2.html</accepts>
+    </rule>
+    <rule id="6996c48f">
+        <description>Created after removal of "Обновляет статус заказа доставки" from sandwich-arch</description>
+        <accepts>Обновляет_статус_заказа_доставки2.html</accepts>
+    </rule>
+    <rule id="db526f7">
+        <description>Created after removal of "Выбирает все заказы готовые к доставке" from sandwich-arch</description>
+        <accepts>Выбирает_все_заказы_готовые_к_доставке2.html</accepts>
+    </rule>
+    <rule id="74562885">
+        <description>Created after removal of "Возвращает список видов доставки" from sandwich-arch</description>
+        <accepts>Возвращает_список_видов_доставки2.html</accepts>
+    </rule>
+    <rule id="73af6eb0">
+        <description>Created after removal of "Выбрать заказы по магазину" from sandwich-arch</description>
+        <accepts>Выбрать_заказы_по_магазину2.html</accepts>
+    </rule>
+    <rule id="72ad49d4">
+        <description>Created after removal of "Выбрать заказы по статусу" from sandwich-arch</description>
+        <accepts>Выбрать_заказы_по_статусу2.html</accepts>
+    </rule>
+    <rule id="78215f22">
+        <description>Created after removal of "Обновить статус заказа" from sandwich-arch</description>
+        <accepts>Обновить_статус_заказа2.html</accepts>
+    </rule>
+    <rule id="4725f731">
+        <description>Created after removal of "Выбрать заказ по идентификатору" from sandwich-arch</description>
+        <accepts>Выбрать_заказ_по_идентификатору2.html</accepts>
+    </rule>
+    <rule id="1708af73">
+        <description>Created after removal of "Создать заказ" from sandwich-arch</description>
+        <accepts>Создать_заказ2.html</accepts>
+    </rule>
+    <rule id="4a189e3b">
+        <description>Created after removal of "Удалить продукт из корзины" from sandwich-arch</description>
+        <accepts>Удалить_продукт_из_корзины2.html</accepts>
+    </rule>
+    <rule id="7f976a17">
+        <description>Created after removal of "Изменить количество одного продукта" from sandwich-arch</description>
+        <accepts>Изменить_количество_одного_продукта2.html</accepts>
+    </rule>
+    <rule id="694fb1fd">
+        <description>Created after removal of "Добавить в корзину" from sandwich-arch</description>
+        <accepts>Добавить_в_корзину2.html</accepts>
+    </rule>
+    <rule id="5ca12753">
+        <description>Created after removal of "Возвращает отчет" from sandwich-arch</description>
+        <accepts>Возвращает_отчет2.html</accepts>
+    </rule>
+    <rule id="1d02fe31">
+        <description>Created after removal of "Удаляет региональные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Удаляет_региональные_спец_предложение_магазина2.html</accepts>
+    </rule>
+    <rule id="ec01036">
+        <description>Created after removal of "Создает региональные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Создает_региональные_спец_предложение_магазина2.html</accepts>
+    </rule>
+    <rule id="58299bab">
+        <description>Created after removal of "Выбирает региональные спец предложения магазина" from sandwich-arch
+        </description>
+        <accepts>Выбирает_региональные_спец_предложения_магазина2.html</accepts>
+    </rule>
+    <rule id="60e2dd5e">
+        <description>Created after removal of "Удаляет локальные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Удаляет_локальные_спец_предложение_магазина2.html</accepts>
+    </rule>
+    <rule id="3f2485ca">
+        <description>Created after removal of "Создает локальные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Создает_локальные_спец_предложение_магазина2.html</accepts>
+    </rule>
+    <rule id="6e5136f9">
+        <description>Created after removal of "Выбирает локальные спец предложения магазина" from sandwich-arch
+        </description>
+        <accepts>Выбирает_локальные_спец_предложения_магазина2.html</accepts>
+    </rule>
+    <rule id="1850e37a">
+        <description>Created after removal of "Выбирает заказы магазина" from sandwich-arch</description>
+        <accepts>Выбирает_заказы_магазина2.html</accepts>
+    </rule>
+    <rule id="4c72f0ca">
+        <description>Created after removal of "Выбирает магазин по идентификатору" from sandwich-arch</description>
+        <accepts>Выбирает_магазин_по_идентификатору2.html</accepts>
+    </rule>
+    <rule id="13fa9427">
+        <description>Created after removal of "Список магазинов" from sandwich-arch</description>
+        <accepts>Список_магазинов2.html</accepts>
+    </rule>
+    <rule id="6c91d389">
+        <description>Created after removal of "Обновляет данные о продукте" from sandwich-arch</description>
+        <accepts>Обновляет_данные_о_продукте4.html</accepts>
+    </rule>
+    <rule id="6f6bfc6f">
+        <description>Created after removal of "Обновляет данные о продукте" from sandwich-arch</description>
+        <accepts>Обновляет_данные_о_продукте3.html</accepts>
+    </rule>
+    <rule id="7a85e457">
+        <description>Created after removal of "Возвращает продукт по идентификатору" from sandwich-arch</description>
+        <accepts>Возвращает_продукт_по_идентификатору2.html</accepts>
+    </rule>
+    <rule id="5d5bec1e">
+        <description>Created after removal of "Создает новый продукт" from sandwich-arch</description>
+        <accepts>Создает_новый_продукт2.html</accepts>
+    </rule>
+    <rule id="18ba62e2">
+        <description>Created after removal of "Возвращает меню" from sandwich-arch</description>
+        <accepts>Возвращает_меню2.html</accepts>
+    </rule>
+    <rule id="7ac6ba51">
+        <description>Created after removal of "Детализация одного заказа текущего пользователя" from sandwich-arch
+        </description>
+        <accepts>Детализация_одного_заказа_текущего_пользователя2.html</accepts>
+    </rule>
+    <rule id="13b60879">
+        <description>Created after removal of "Список заказов текущего пользователя" from sandwich-arch</description>
+        <accepts>Список_заказов_текущего_пользователя2.html</accepts>
+    </rule>
+    <rule id="5a4da1cb">
+        <description>Created after removal of "Удаление аккаунта" from sandwich-arch</description>
+        <accepts>Удаление_аккаунта2.html</accepts>
+    </rule>
+    <rule id="3680d39a">
+        <description>Created after removal of "Обновление информации о текущем пользователе" from sandwich-arch
+        </description>
+        <accepts>Обновление_информации_о_текущем_пользователе2.html</accepts>
+    </rule>
+    <rule id="57cde3b6">
+        <description>Created after removal of "Информация о текущем пользователе" from sandwich-arch</description>
+        <accepts>Информация_о_текущем_пользователе2.html</accepts>
+    </rule>
+    <rule id="3644af92">
+        <description>Created after removal of "Регистрация нового пользователя" from sandwich-arch</description>
+        <accepts>Регистрация_нового_пользователя2.html</accepts>
+    </rule>
+    <rule id="35436663">
+        <description>Created after removal of "Выход из системы" from sandwich-arch</description>
+        <accepts>Выход_из_системы2.html</accepts>
+    </rule>
+    <rule id="68c94b37">
+        <description>Created after removal of "Авторизация" from sandwich-arch</description>
+        <accepts>Авторизация2.html</accepts>
+    </rule>
+    <rule id="29a3ee2d">
+        <description>Created after removal of "API Reference" from sandwich-arch</description>
+        <accepts>API_Reference3.html</accepts>
+    </rule>
+    <rule id="4dba3ed">
+        <description>Created after removal of "Schemas" from sandwich-arch</description>
+        <accepts>Schemas4.html</accepts>
+    </rule>
+    <rule id="2e7a9d82">
+        <description>Created after removal of "Error" from sandwich-arch</description>
+        <accepts>Error4.html</accepts>
+    </rule>
+    <rule id="7e3b2c5a">
+        <description>Created after removal of "Product" from sandwich-arch</description>
+        <accepts>Product4.html</accepts>
+    </rule>
+    <rule id="19946b08">
+        <description>Created after removal of "Shop" from sandwich-arch</description>
+        <accepts>Shop4.html</accepts>
+    </rule>
+    <rule id="1f838d83">
+        <description>Created after removal of "OrderItem" from sandwich-arch</description>
+        <accepts>OrderItem4.html</accepts>
+    </rule>
+    <rule id="6bba2e0d">
+        <description>Created after removal of "Order" from sandwich-arch</description>
+        <accepts>Order4.html</accepts>
+    </rule>
+    <rule id="7585efc8">
+        <description>Created after removal of "Принимает уведомление от платежной системы" from sandwich-arch
+        </description>
+        <accepts>Принимает_уведомление_от_платежной_системы3.html</accepts>
+    </rule>
+    <rule id="6e6c4dbb">
+        <description>Created after removal of "Создает платеж для заказа" from sandwich-arch</description>
+        <accepts>Создает_платеж_для_заказа3.html</accepts>
+    </rule>
+    <rule id="4a087358">
+        <description>Created after removal of "Возвращает список видов оплаты" from sandwich-arch</description>
+        <accepts>Возвращает_список_видов_оплаты3.html</accepts>
+    </rule>
+    <rule id="48cfedf7">
+        <description>Created after removal of "Обновляет статус заказа доставки" from sandwich-arch</description>
+        <accepts>Обновляет_статус_заказа_доставки3.html</accepts>
+    </rule>
+    <rule id="2de8ca39">
+        <description>Created after removal of "Выбирает все заказы готовые к доставке" from sandwich-arch</description>
+        <accepts>Выбирает_все_заказы_готовые_к_доставке3.html</accepts>
+    </rule>
+    <rule id="e642f32">
+        <description>Created after removal of "Возвращает список видов доставки" from sandwich-arch</description>
+        <accepts>Возвращает_список_видов_доставки3.html</accepts>
+    </rule>
+    <rule id="4e276a6b">
+        <description>Created after removal of "Выбрать заказы по магазину" from sandwich-arch</description>
+        <accepts>Выбрать_заказы_по_магазину3.html</accepts>
+    </rule>
+    <rule id="4a65d712">
+        <description>Created after removal of "Выбрать заказы по статусу" from sandwich-arch</description>
+        <accepts>Выбрать_заказы_по_статусу3.html</accepts>
+    </rule>
+    <rule id="240e7ef7">
+        <description>Created after removal of "Обновить статус заказа" from sandwich-arch</description>
+        <accepts>Обновить_статус_заказа3.html</accepts>
+    </rule>
+    <rule id="4c3ac3dc">
+        <description>Created after removal of "Выбрать заказ по идентификатору" from sandwich-arch</description>
+        <accepts>Выбрать_заказ_по_идентификатору3.html</accepts>
+    </rule>
+    <rule id="5e6ae6f9">
+        <description>Created after removal of "Создать заказ" from sandwich-arch</description>
+        <accepts>Создать_заказ3.html</accepts>
+    </rule>
+    <rule id="787552a6">
+        <description>Created after removal of "Удалить продукт из корзины" from sandwich-arch</description>
+        <accepts>Удалить_продукт_из_корзины3.html</accepts>
+    </rule>
+    <rule id="6081eee2">
+        <description>Created after removal of "Изменить количество одного продукта" from sandwich-arch</description>
+        <accepts>Изменить_количество_одного_продукта3.html</accepts>
+    </rule>
+    <rule id="43dcea74">
+        <description>Created after removal of "Добавить в корзину" from sandwich-arch</description>
+        <accepts>Добавить_в_корзину3.html</accepts>
+    </rule>
+    <rule id="435c8739">
+        <description>Created after removal of "Возвращает отчет" from sandwich-arch</description>
+        <accepts>Возвращает_отчет3.html</accepts>
+    </rule>
+    <rule id="23d762e3">
+        <description>Created after removal of "Удаляет региональные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Удаляет_региональные_спец_предложение_магазина3.html</accepts>
+    </rule>
+    <rule id="19a125f7">
+        <description>Created after removal of "Создает региональные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Создает_региональные_спец_предложение_магазина3.html</accepts>
+    </rule>
+    <rule id="7e9fdb3e">
+        <description>Created after removal of "Выбирает региональные спец предложения магазина" from sandwich-arch
+        </description>
+        <accepts>Выбирает_региональные_спец_предложения_магазина3.html</accepts>
+    </rule>
+    <rule id="4313b13b">
+        <description>Created after removal of "Удаляет локальные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Удаляет_локальные_спец_предложение_магазина3.html</accepts>
+    </rule>
+    <rule id="7a77b4d3">
+        <description>Created after removal of "Создает локальные спец предложение магазина" from sandwich-arch
+        </description>
+        <accepts>Создает_локальные_спец_предложение_магазина3.html</accepts>
+    </rule>
+    <rule id="193f6273">
+        <description>Created after removal of "Выбирает локальные спец предложения магазина" from sandwich-arch
+        </description>
+        <accepts>Выбирает_локальные_спец_предложения_магазина3.html</accepts>
+    </rule>
+    <rule id="79cc9a1">
+        <description>Created after removal of "Выбирает заказы магазина" from sandwich-arch</description>
+        <accepts>Выбирает_заказы_магазина3.html</accepts>
+    </rule>
+    <rule id="27ca1ec0">
+        <description>Created after removal of "Выбирает магазин по идентификатору" from sandwich-arch</description>
+        <accepts>Выбирает_магазин_по_идентификатору3.html</accepts>
+    </rule>
+    <rule id="748161dc">
+        <description>Created after removal of "Список магазинов" from sandwich-arch</description>
+        <accepts>Список_магазинов3.html</accepts>
+    </rule>
+    <rule id="39bb44c3">
+        <description>Created after removal of "Удаляет продукт" from sandwich-arch</description>
+        <accepts>Удаляет_продукт.html</accepts>
+    </rule>
+    <rule id="4ce97afe">
+        <description>Created after removal of "Обновляет данные о продукте" from sandwich-arch</description>
+        <accepts>Обновляет_данные_о_продукте5.html</accepts>
+    </rule>
+    <rule id="2f019cda">
+        <description>Created after removal of "Возвращает продукт по идентификатору" from sandwich-arch</description>
+        <accepts>Возвращает_продукт_по_идентификатору3.html</accepts>
+    </rule>
+    <rule id="212b6b63">
+        <description>Created after removal of "Создает новый продукт" from sandwich-arch</description>
+        <accepts>Создает_новый_продукт3.html</accepts>
+    </rule>
+    <rule id="3ebd8878">
+        <description>Created after removal of "Возвращает меню" from sandwich-arch</description>
+        <accepts>Возвращает_меню3.html</accepts>
+    </rule>
+    <rule id="73f13b7c">
+        <description>Created after removal of "Детализация одного заказа текущего пользователя" from sandwich-arch
+        </description>
+        <accepts>Детализация_одного_заказа_текущего_пользователя3.html</accepts>
+    </rule>
+    <rule id="10cbaf4">
+        <description>Created after removal of "Список заказов текущего пользователя" from sandwich-arch</description>
+        <accepts>Список_заказов_текущего_пользователя3.html</accepts>
+    </rule>
+    <rule id="1fb64b9c">
+        <description>Created after removal of "Удаление аккаунта" from sandwich-arch</description>
+        <accepts>Удаление_аккаунта3.html</accepts>
+    </rule>
+    <rule id="3dc382ce">
+        <description>Created after removal of "Обновление информации о текущем пользователе" from sandwich-arch
+        </description>
+        <accepts>Обновление_информации_о_текущем_пользователе3.html</accepts>
+    </rule>
+    <rule id="65e22ac8">
+        <description>Created after removal of "Информация о текущем пользователе" from sandwich-arch</description>
+        <accepts>Информация_о_текущем_пользователе3.html</accepts>
+    </rule>
+    <rule id="cfa19cc">
+        <description>Created after removal of "Регистрация нового пользователя" from sandwich-arch</description>
+        <accepts>Регистрация_нового_пользователя3.html</accepts>
+    </rule>
+    <rule id="676b2864">
+        <description>Created after removal of "Выход из системы" from sandwich-arch</description>
+        <accepts>Выход_из_системы3.html</accepts>
+    </rule>
+    <rule id="13da13f1">
+        <description>Created after removal of "Авторизация" from sandwich-arch</description>
+        <accepts>Авторизация3.html</accepts>
+    </rule>
+    <rule id="437d191a">
+        <description>Created after removal of "API Reference" from sandwich-arch</description>
+        <accepts>API_Reference4.html</accepts>
+    </rule>
+    <rule id="1ef033c8">
+        <description>Created after removal of "Схема взаимодействия сервисов" from sandwich-arch</description>
+        <accepts>Схема-взаимодействия-сервисов.html</accepts>
+    </rule>
+</rules>

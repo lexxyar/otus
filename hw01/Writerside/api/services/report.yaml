@@ -1,0 +1,47 @@
+openapi: 3.1.0
+info:
+  title: Сервис отчетности
+  description: Сервис построения отчетности
+  version: 1.0.0
+servers:
+  - url: 'https://newsubway.shop/api/v1'
+tags:
+  - name: Report
+paths:
+  #  Report
+  /reports:
+    post:
+      tags:
+        - Report
+      summary: Создание отчета
+      operationId: createReport
+      security:
+        - bearerAuth: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Report"
+      responses:
+        200:
+          description: Report creating
+        401:
+          $ref: "#/components/responses/Unauthorized"
+
+components:
+  securitySchemes:
+    bearerAuth:
+      $ref: "../schemas/security.yaml#/bearerAuth"
+  responses:
+    Unauthorized:
+      $ref: "../schemas/common.yaml#/Unauthorized"
+  schemas:
+    Report:
+      type: object
+      properties:
+        report_type:
+          type: string
+          enum:
+            - statistic
+            - financial
+          example: statistic

@@ -1,0 +1,25 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(Customer, "Customer", "A lovely customer of the subway sandwich.")
+Person(Courier, "Courier", "Delivery boy")
+Person(Seller, "Seller", "Shop staff")
+
+System_Ext(PaymentExt, "Payment service", "The external payment system.")
+System(App, "Sandwich system", "Allow to use/manage sandwich")
+System_Ext(NotificationExt, "Notification service", "The external Notification service.")
+
+Rel(Customer, App, "Maintain customer profile, Make order, Check order status")
+Rel(Courier, App, "Manage delivery")
+Rel(Seller,App, "Product presentation, Managing orders, Managing shop")
+BiRel(App, PaymentExt, "Perform payment")
+Rel_R(App, NotificationExt, "Using")
+Rel(NotificationExt, Customer, "Notify")
+Rel(NotificationExt, Courier, "Notify")
+Rel(NotificationExt, Seller, "Notify")
+
+Lay_D(NotificationExt, Customer)
+Lay_U(NotificationExt, Courier)
+Lay_L(Courier, Seller)
+
+@enduml

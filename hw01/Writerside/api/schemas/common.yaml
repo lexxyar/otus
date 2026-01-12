@@ -1,0 +1,178 @@
+Error:
+  type: object
+  properties:
+    error:
+      type: string
+      description: Сообщение об ошибке
+    code:
+      type:
+        - string
+        - number
+      description: Код ошибки
+    details:
+      type: object
+      description: Дополнительные детали
+  required:
+    - error
+    - code
+
+CredentialError:
+  type: object
+  properties:
+    field:
+      type: string
+      example: email
+    message:
+      type: string
+      example: Invalid email format.
+
+Unauthorized:
+  description: Не авторизован
+  content:
+    application/json:
+      schema:
+        allOf:
+          - $ref: '#/Error'
+          - type: object
+            example:
+              error: Token is invalid or expired
+              code: 401
+#InvalidCredentials:
+#  description: Данные указаны не верно
+#  content:
+#    application/json:
+#      schema:
+#        type: object
+#        properties:
+#          errors:
+#            type: array
+#            items:
+#              $ref: "#/CredentialError"
+#          message:
+#            type: string
+#            example: Validation failed for one or more fields.
+#          code:
+#            type: string
+#            example: 422
+#
+##          - type: object
+##            example:
+##              error: Invalid credentials
+##              code: 422
+FieldError:
+  type: object
+  properties:
+    field:
+      type: string
+      description: Название поля с ошибкой
+    message:
+      type: string
+      description: Сообщение об ошибке
+  required:
+    - field
+    - message
+  example:
+    field: "email"
+    message: "Invalid email format."
+ValidationError:
+  type: object
+  properties:
+    errors:
+      type: array
+      description: Список ошибок валидации
+      items:
+        $ref: '#/FieldError'
+    message:
+      type: string
+      description: Общее сообщение об ошибке
+    code:
+      type: string
+      description: Код ошибки
+  required:
+    - errors
+    - message
+    - code
+  example:
+    errors:
+      - field: "email"
+        message: "Invalid email format."
+      - field: "password"
+        message: "Password must be at least 8 characters long."
+    message: "Validation failed for one or more fields."
+    code: "UNPROCESSABLE_ENTITY"
+InvalidCredentials:
+  description: Ошибка валидации данных
+  content:
+    application/json:
+      schema:
+        $ref: '#/ValidationError'
+      examples:
+        ValidationErrorExample:
+          summary: Пример ошибки валидации
+          value:
+            errors:
+              - field: email
+                message: Invalid email format.
+              - field: password
+                message: Password must be at least 8 characters long.
+            message: Validation failed for one or more fields.
+            code: UNPROCESSABLE_ENTITY
+
+NotFound:
+  description: Ресурс не найден
+  content:
+    plane/text:
+      example: Not Found
+
+Id:
+  type: string
+  example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+  description: Идентификатор объекта
+
+PaymentLink:
+  type: string
+  example: 'https://getmymoney.com/pay/f81d4fae-7dec-11d0-a765-00a0c91e6bf6'
+  description: Платежная ссылка
+
+ProductIdParam:
+  name: productId
+  in: path
+  description: ID товара
+  required: true
+  schema:
+    $ref: "#/Id"
+ShopIdParam:
+  name: shopId
+  in: path
+  description: ID магазина
+  required: true
+  schema:
+    $ref: "#/Id"
+PromoIdParam:
+  name: promoId
+  in: path
+  description: ID акции
+  required: true
+  schema:
+    $ref: "#/Id"
+CourierIdParam:
+  name: courierId
+  in: path
+  description: ID курьера
+  required: true
+  schema:
+    $ref: "#/Id"
+OrderIdParam:
+  name: orderId
+  in: path
+  description: ID заказа
+  required: true
+  schema:
+    $ref: "#/Id"
+OrderStatusParam:
+  name: status
+  in: path
+  description: Статус заказа
+  required: true
+  schema:
+    $ref: "../schemas/order.yaml#/OrderStatus"
