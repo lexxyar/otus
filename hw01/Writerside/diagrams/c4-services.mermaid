@@ -1,0 +1,23 @@
+C4Context
+    title Subway sandwich
+        System(SystemAA, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
+
+        Person(Customer, "Customer", "A lovely customer of the subway sandwich.")
+        Person(Courier, "Courier", "Delivery boy")
+        Person(Seller, "Seller", "Shop staff")
+        Boundary(b0, "System") {
+            System(MobileApp, "Mobile app")
+            System(WebApp, "Mobile app")
+            System(Backend, "Sandwich system")
+            SystemDb(Database, "Database")
+        }
+
+        System_Ext(PaymentExt, "Payment system", "The external payment system.")
+
+    BiRel(Customer, MobileApp, "HTTP")
+    BiRel(Seller, WebApp, "HTTP")
+    BiRel(Courier, WebApp,, "HTTP")
+    BiRel(MobileApp, Backend, "HTTP")
+    BiRel(WebApp, Backend, "HTTP")
+    BiRel(Backend, Database, "Uses")
+    BiRel(Backend, PaymentExt, "Uses")

@@ -1,0 +1,14 @@
+Product:
+  required:
+    - name
+    - price
+  type: object
+  properties:
+    id:
+      $ref: "../schemas/common.yaml#/Id"
+    name:
+      type: string
+      example: Cheese & Tuna
+    price:
+      type: number
+      example: 149.99

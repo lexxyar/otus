@@ -1,0 +1,25 @@
+Promo:
+  type: object
+  required:
+    - product_id
+    - start_at
+    - finish_at
+    - discount
+  properties:
+    id:
+      $ref: "./common.yaml#/Id"
+    shop_id:
+      $ref: "./common.yaml#/Id"
+    product_id:
+      $ref: "./common.yaml#/Id"
+    start_at:
+      type: string
+      format: date-time
+      description: Дата начала акции
+    finish_at:
+      type: string
+      format: date-time
+      description: Дата окончания акции
+    discount:
+      type: number
+      example: 30

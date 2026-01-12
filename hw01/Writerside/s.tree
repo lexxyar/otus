@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="s"
+                 name="sandwich-arch"
+                 start-page="instance.md">
+
+    <toc-element topic="instance.md"/>
+    <toc-element topic="Пользовательские-сценарии.md"/>
+    <toc-element topic="Описание-сервисов.md"/>
+    <toc-element topic="Контракты-взаимодействия.md">
+        <toc-element topic="Authorisation.md"/>
+        <toc-element topic="Delivery.md"/>
+        <toc-element topic="Notification.md"/>
+        <toc-element topic="Orders.md"/>
+        <toc-element topic="Payment.md"/>
+        <toc-element topic="Report.md"/>
+        <toc-element topic="Shops.md"/>
+    </toc-element>
+</instance-profile>

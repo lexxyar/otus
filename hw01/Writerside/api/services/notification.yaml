@@ -1,0 +1,51 @@
+openapi: 3.1.0
+info:
+  title: Сервис уведомлений
+  description: Сервис отправки уведомлений
+  version: 1.0.0
+servers:
+  - url: 'https://newsubway.shop/api/v1'
+tags:
+  - name: Notification
+paths:
+  #  Notification
+  /notification:
+    post:
+      tags:
+        - Notification
+      summary: Создание уведомления
+      operationId: createNotification
+      security:
+        - bearerAuth: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Notification"
+      responses:
+        204:
+          description: Notification sent
+        401:
+          $ref: "#/components/responses/Unauthorized"
+
+components:
+  securitySchemes:
+    bearerAuth:
+      $ref: "../schemas/security.yaml#/bearerAuth"
+  responses:
+    Unauthorized:
+      $ref: "../schemas/common.yaml#/Unauthorized"
+  schemas:
+    Notification:
+      type: object
+      properties:
+        notification_type:
+          type: string
+          enum:
+            - sms
+            - email
+            - telegram
+          example: telegram
+        payload:
+          type: string
+          example: 'Order paid'

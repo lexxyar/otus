@@ -1,0 +1,48 @@
+Login:
+  type: object
+  required:
+    - email
+    - password
+  properties:
+    email:
+      type: string
+      example: user@mail.com
+      description: The user name for login
+    password:
+      type: string
+      example: Pas$$w0rd
+      description: The password for login in clear text
+Register:
+  type: object
+  required:
+    - name
+    - email
+    - password
+  properties:
+    name:
+      type: string
+      example: Jane Doe
+      description: The user name
+    email:
+      type: string
+      example: user@mail.com
+      description: The user email for login
+    password:
+      type: string
+      example: Pas$$w0rd
+      description: The password for login in clear text
+    address:
+      type: string
+      example: Elm st.
+      description: The user address for delivery
+Token:
+  type: object
+  properties:
+    token:
+      type: string
+      example: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9
+      description: JWT token
+    refresh_token:
+      type: string
+      example: cBMrwDsXRwPqVmCQx7I5IX0jQ9-Lc_zHOgYeab1xZm4
+      description: JWT token

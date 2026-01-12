@@ -1,0 +1,12 @@
+CartItem:
+  type: object
+  properties:
+    product_id:
+      $ref: "../schemas/common.yaml#/Id"
+    quantity:
+      type: number
+      example: 2
+Cart:
+  type: array
+  items:
+    $ref: "#/CartItem"

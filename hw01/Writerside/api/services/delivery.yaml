@@ -1,0 +1,133 @@
+openapi: 3.1.0
+info:
+  title: Сервис доставки
+  description: Сервис управления доставкой
+  version: 1.0.0
+servers:
+  - url: 'https://newsubway.shop/api/v1'
+tags:
+  - name: Delivery
+paths:
+  #  Delivery
+  /delivery/couriers:
+    get:
+      tags:
+        - Delivery
+      summary: Список курьеров
+      operationId: getCourierList
+      security:
+        - bearerAuth: [ ]
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Courier'
+        401:
+          $ref: "#/components/responses/Unauthorized"
+    post:
+      tags:
+        - Delivery
+      summary: Добавляет курьера
+      operationId: createCourier
+      security:
+        - bearerAuth: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Courier"
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Courier'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+  /delivery/courier/{courierId}:
+    get:
+      tags:
+        - Delivery
+      summary: Возвращает курьера по идентификатору
+      operationId: getCourierById
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - $ref: "#/components/parameters/CourierIdParam"
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Courier'
+        404:
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags:
+        - Delivery
+      summary: Обновляет данные о курьере
+      operationId: updateCourier
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - $ref: "#/components/parameters/CourierIdParam"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Courier'
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Courier'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags:
+        - Delivery
+      summary: Удаляет курьера
+      operationId: deleteCourier
+      security:
+        - bearerAuth: [ ]
+      parameters:
+        - $ref: "#/components/parameters/CourierIdParam"
+      responses:
+        204:
+          description: Deleted
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      $ref: "../schemas/security.yaml#/bearerAuth"
+  parameters:
+    CourierIdParam:
+      $ref: "../schemas/common.yaml#/CourierIdParam"
+  responses:
+    Unauthorized:
+      $ref: "../schemas/common.yaml#/Unauthorized"
+    NotFound:
+      $ref: "../schemas/common.yaml#/NotFound"
+  schemas:
+    Courier:
+      type: object
+      properties:
+        id:
+          $ref: "../schemas/common.yaml#/Id"
+        name:
+          type: string
+          example: John Doe
