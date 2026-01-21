@@ -1,11 +1,14 @@
 # Installation
-
-1. Create `.env` file in project root directory. Use `.env.example` file as template.
-2. Start docker containers
-
+## Postgres
 ```shell
-docker-compose up -d --build
+helm install my-postgres \
+  oci://registry-1.docker.io/cloudpirates/postgres \
+  --namespace default \
+  --create-namespace \
+  -f postgres-values.yaml
 ```
-
-3. Go to [Swagger docs](http://localhost:8000/docs) to test service.
+## Kubectl
+```shell
+kubectl apply -f k8s
+```
 
