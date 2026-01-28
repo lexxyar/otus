@@ -1,19 +1,20 @@
-replicaCount: 1
+global:
+  postgresql:
+    auth:
+      username: "admin"
+      database: "userdb"
 
-image:
-  repository: postgres
-  tag: "15"
-  pullPolicy: IfNotPresent
+auth:
+  postgresPassword: "postgres-password"
+  username: "user"
+  password: "password"
+  database: "userdb"
 
-service:
-  type: ClusterIP
-  port: 5432
-
-persistence:
-  enabled: true
-  size: 1Gi
-
-env:
-  POSTGRES_USER: "user"
-  POSTGRES_PASSWORD: "password"
-  POSTGRES_DB: "userdb"
+primary:
+  service:
+    type: ClusterIP
+    ports:
+      postgresql: 5432
+  persistence:
+    enabled: true
+    size: 1Gi

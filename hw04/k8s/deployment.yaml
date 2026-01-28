@@ -12,14 +12,14 @@ spec:
       labels:
         app: otus-app
     spec:
-#      initContainers:
-#        - name: wait-for-db
-#          image: busybox
-#          command: [ 'sh', '-c', 'echo "Waiting for DB..." && until nc -z postgresql:5432; do sleep 2; done' ]
+      #      initContainers:
+      #        - name: wait-for-db
+      #          image: busybox
+      #          command: [ 'sh', '-c', 'echo "Waiting for DB..." && until nc -z postgresql:5432; do sleep 2; done' ]
 
       containers:
         - name: otus-app
-          image: lexxyar/otus-app:v1.2
+          image: lexxyar/otus-app:v1.5
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
@@ -29,9 +29,18 @@ spec:
             - secretRef:
                 name: user-db-secret
           env:
-            - name: DATABASE_URL
-#              value: "postgresql://$(DATABASE_USER):$(DATABASE_PASSWORD)@$(DATABASE_HOST):$(DATABASE_PORT)/$(DATABASE_NAME)"
-              value: "postgresql://user:password@my-postgres:5432/userdb"
+            - name: DB_DRIVER
+              value: "postgresql"
+            - name: DB_HOST
+              value: "my-postgres"
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_USER
+              value: "user"
+            - name: DB_PASSWORD
+              value: "password"
+            - name: DB_NAME
+              value: "userdb"
           livenessProbe:
             httpGet:
               path: /health
