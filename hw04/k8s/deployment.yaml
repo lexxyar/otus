@@ -28,19 +28,19 @@ spec:
                 name: user-app-config
             - secretRef:
                 name: user-db-secret
-          env:
-            - name: DB_DRIVER
-              value: "postgresql"
-            - name: DB_HOST
-              value: "my-postgres"
-            - name: DB_PORT
-              value: "5432"
-            - name: DB_USER
-              value: "user"
-            - name: DB_PASSWORD
-              value: "password"
-            - name: DB_NAME
-              value: "userdb"
+#          env:
+#            - name: DB_DRIVER
+#              value: "postgresql"
+#            - name: DB_HOST
+#              value: "my-postgres"
+#            - name: DB_PORT
+#              value: "5432"
+#            - name: DB_USER
+#              value: "user"
+#            - name: DB_PASSWORD
+#              value: "password"
+#            - name: DB_NAME
+#              value: "userdb"
           livenessProbe:
             httpGet:
               path: /health

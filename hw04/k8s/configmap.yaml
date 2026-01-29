@@ -3,7 +3,8 @@ kind: ConfigMap
 metadata:
   name: user-app-config
 data:
-  DATABASE_HOST: "my-postgres"
-  DATABASE_PORT: "5432"
-  DATABASE_NAME: "userdb"
+  DB_HOST: "my-postgres"
+  DB_PORT: "5432"
+  DB_NAME: "userdb"
+  DB_DRIVER: "postgresql"
   APP_PORT: "8000"
