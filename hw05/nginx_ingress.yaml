@@ -9,10 +9,10 @@ controller:
       http: 80
       https: 443
 
-  metrics:
-    enabled: true
-    service:
+    metrics:
       enabled: true
+      service:
+        enabled: true
 
   service:
     type: NodePort

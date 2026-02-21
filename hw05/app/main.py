@@ -3,7 +3,6 @@ from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from typing import List, Optional
 from prometheus_fastapi_instrumentator import Instrumentator
-import random
 
 import database
 import models
@@ -130,10 +129,11 @@ def delete_user(user_id: int, db: Session = Depends(get_db)):
     db.commit()
     return
 
-@app.get("/test5xx")
-def test5xx():
-    if random.random() < 0.75:
-        raise HTTPException(status_code=501, detail="501 for testing")
+# Метод для вызова 5xx ошибки
+@app.get("/cause-5xx")
+def cause_5xx():
+    if random.random() < 0.75:  # 75% вероятность
+        raise HTTPException(status_code=502, detail="502 for testing")
     else:
         return {"message": "OK (25% chance)"}
 
